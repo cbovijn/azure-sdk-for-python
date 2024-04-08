@@ -103,7 +103,7 @@ class HealthInsightsSyncSamples:
         for patient_result in radiology_insights_result.patient_results:
             for ri_inference in patient_result.inferences:
                 if ri_inference.kind == models.RadiologyInsightsInferenceType.LATERALITY_DISCREPANCY:
-                    print(f"{ri_inference.kind.name} Inference Found")
+                    print(f"{ri_inference.kind.name} Inference found")
                     indication = ri_inference.laterality_indication 
                     for code in indication.coding:
                          print(f"{ri_inference.kind.name}: Laterality Indication: {code.system} {code.code} {code.display}")

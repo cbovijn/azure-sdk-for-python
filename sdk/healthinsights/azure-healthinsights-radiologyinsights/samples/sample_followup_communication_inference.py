@@ -113,7 +113,7 @@ class HealthInsightsSyncSamples:
         for patient_result in radiology_insights_result.patient_results:
             for ri_inference in patient_result.inferences:
                 if ri_inference.kind == models.RadiologyInsightsInferenceType.FOLLOWUP_COMMUNICATION:
-                    print(f"{ri_inference.kind.name} Inference Found")
+                    print(f"{ri_inference.kind.name} Inference found")
                     for datetime in ri_inference.date_time:
                         print(f"{ri_inference.kind.name}: Date Time: {datetime}")
                     for recepient in ri_inference.recipient:

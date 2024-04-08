@@ -110,7 +110,7 @@ class HealthInsightsSyncSamples:
             for ri_inference in patient_result.inferences:
                 if ri_inference.kind == models.RadiologyInsightsInferenceType.CRITICAL_RESULT:
                     critical_result = ri_inference.result
-                    print(f"Critical Result Inference found: {critical_result.description}")
+                    print(f"{ri_inference.kind.name}  Inference found: {critical_result.description}")
 
 
 def main():

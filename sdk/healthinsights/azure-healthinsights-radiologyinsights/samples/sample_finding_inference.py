@@ -121,7 +121,7 @@ class HealthInsightsSyncSamples:
             for ri_inference in patient_result.inferences:
                 if ri_inference.kind == models.RadiologyInsightsInferenceType.FINDING:
                     counter += 1
-                    print(f"{ri_inference.kind.name} {counter} Inference Found")
+                    print(f"{ri_inference.kind.name} {counter} Inference found")
                     fin = ri_inference.finding
                     for attribute in dir(fin):
                         if attribute.startswith('_') or callable(getattr(fin, attribute)):

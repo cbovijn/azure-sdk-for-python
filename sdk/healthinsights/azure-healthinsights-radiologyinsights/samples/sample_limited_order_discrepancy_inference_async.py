@@ -108,12 +108,12 @@ class HealthInsightsSamples:
             print(str(ex))
             return
 
-    def display_critical_results(self, radiology_insights_result):
-        # [START display_critical_results]
+    def display_limited_order_discrepancy(self, radiology_insights_result):
+        # [START display_limited_order_discrepancy]
         for patient_result in radiology_insights_result.patient_results:
             for ri_inference in patient_result.inferences:
                 if ri_inference.kind == models.RadiologyInsightsInferenceType.LIMITED_ORDER_DISCREPANCY:
-                    print(f"{ri_inference.kind.name} Inference Found")
+                    print(f"{ri_inference.kind.name} Inference found")
                     ordertype = ri_inference.order_type
                     for coding in ordertype.coding:
                         print(f"{ri_inference.kind.name}: Order Type: {coding.system} {coding.code} {coding.display}")
@@ -130,6 +130,7 @@ class HealthInsightsSamples:
                             for coding in presentbodypartmeasurement.coding:
                                 print(f"{ri_inference.kind.name}: Present Body Part Measurement: {coding.system} {coding.code} {coding.display}")
         
+        # [END display_limited_order_discrepancy]
 
 async def main():
     sample = HealthInsightsSamples()

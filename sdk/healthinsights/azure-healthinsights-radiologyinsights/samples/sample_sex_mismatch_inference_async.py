@@ -107,17 +107,17 @@ class HealthInsightsSamples:
             print(str(ex))
             return
 
-    def display_critical_results(self, radiology_insights_result):
-        # [START display_critical_results]
+    def display_sex_mismatch(self, radiology_insights_result):
+        # [START display_sex_mismatch]
         for patient_result in radiology_insights_result.patient_results:
             for ri_inference in patient_result.inferences:
                 if ri_inference.kind == models.RadiologyInsightsInferenceType.SEX_MISMATCH:
-                    print(f"{ri_inference.kind.name} Inference Found")
+                    print(f"{ri_inference.kind.name} Inference found")
                     indication = ri_inference.sex_indication
                     for code in indication.coding:
                         print(f"{ri_inference.kind.name}: Sex Indication: {code.system} {code.code} {code.display}")
 
-        # [END display_critical_results]
+        # [END display_sex_mismatch]
 
 
 async def main():

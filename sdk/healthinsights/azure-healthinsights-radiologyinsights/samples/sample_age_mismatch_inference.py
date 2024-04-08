@@ -115,7 +115,7 @@ class HealthInsightsSyncSamples:
         for patient_result in radiology_insights_result.patient_results:
             for ri_inference in patient_result.inferences:
                 if ri_inference.kind == models.RadiologyInsightsInferenceType.AGE_MISMATCH:
-                    print(f"{ri_inference.kind.name} Inference Found")
+                    print(f"{ri_inference.kind.name} Inference found")
                     print(f"{ri_inference.kind.name}: Patient ID: {patient_result.patient_id}")
                     Tokens = ""
                     for extension in ri_inference.extension:

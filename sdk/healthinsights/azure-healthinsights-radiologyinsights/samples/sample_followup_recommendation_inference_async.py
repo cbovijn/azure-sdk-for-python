@@ -132,7 +132,7 @@ class HealthInsightsSamples:
         for patient_result in radiology_insights_result.patient_results:
             for ri_inference in patient_result.inferences:
                 if ri_inference.kind == models.RadiologyInsightsInferenceType.FOLLOWUP_RECOMMENDATION:
-                    print(f"{ri_inference.kind.name} Inference Found") 
+                    print(f"{ri_inference.kind.name} Inference found") 
                     for finding in ri_inference.findings:
                         for attribute in dir(finding):
                             if hasattr(finding, attribute) and not attribute.startswith("_") and not callable(getattr(finding, attribute)):

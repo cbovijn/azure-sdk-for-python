@@ -116,7 +116,7 @@ class HealthInsightsSamples:
         for patient_result in radiology_insights_result.patient_results:
             for ri_inference in patient_result.inferences:
                 if ri_inference.kind == models.RadiologyInsightsInferenceType.COMPLETE_ORDER_DISCREPANCY:
-                    print(f"{ri_inference.kind.name} Inference Found")
+                    print(f"{ri_inference.kind.name} Inference found")
                     ordertype = ri_inference.order_type
                     for coding in ordertype.coding:
                         print(f"{ri_inference.kind.name}: Order Type: {coding.system} {coding.code} {coding.display}")
